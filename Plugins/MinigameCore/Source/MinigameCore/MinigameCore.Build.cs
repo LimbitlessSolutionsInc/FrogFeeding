@@ -8,14 +8,15 @@ public class MinigameCore : ModuleRules
 	{
 		bUsePrecompiled = true;
 			
+		
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", "BashCore",
+				"Core", "BashCore", "LimbitlessBluetoothPlugin",
 				"LevelSequence", "MovieScene",
 				"UMG", "InputCore", "EnhancedInput"
 			}
-		);
+			);
 			
 		
 		PrivateDependencyModuleNames.AddRange(
@@ -25,8 +26,16 @@ public class MinigameCore : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore"
+				// ... add private dependencies that you statically link with here ...	
 			}
-		);
+			);
 		
+		
+		DynamicallyLoadedModuleNames.AddRange(
+			new string[]
+			{
+				// ... add any modules that your module loads dynamically here ...
+			}
+			);
 	}
 }
